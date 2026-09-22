@@ -26,12 +26,14 @@ export function setupReveal(gsap, ScrollTrigger, signal) {
   });
 
   const flips = gsap.utils.toArray('[data-flip]');
-  gsap.set(flips, { transformPerspective: 900, transformOrigin: '50% 0%' });
-  ScrollTrigger.batch(flips, {
-    start: 'top 92%',
-    once: true,
-    onEnter: (batch) => gsap.from(batch, { rotationX: -55, y: 50, opacity: 0, duration: 1, stagger: 0.09, ease: 'power3.out', overwrite: true })
-  });
+  if (flips.length) {
+    gsap.set(flips, { transformPerspective: 900, transformOrigin: '50% 0%' });
+    ScrollTrigger.batch(flips, {
+      start: 'top 92%',
+      once: true,
+      onEnter: (batch) => gsap.from(batch, { rotationX: -55, y: 50, opacity: 0, duration: 1, stagger: 0.09, ease: 'power3.out', overwrite: true })
+    });
+  }
 
   document.querySelectorAll('[data-swing]').forEach((element, index) => {
     gsap.from(element, {

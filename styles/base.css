@@ -122,6 +122,18 @@ p{margin:0 0 1em}
   .ftr{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
 }
 
+.to-carta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:28px;padding:22px 24px;border-radius:20px;background:var(--amber);color:var(--ink);text-decoration:none;transition:transform .4s var(--ease)}
+.to-carta__text{font-family:var(--serif);font-size:clamp(1.3rem,2vw + .5rem,1.9rem);line-height:1.1}
+.to-carta__text small{display:block;font-family:var(--sans);font-size:.85rem;margin-top:6px;opacity:.8}
+.to-carta__go{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--amber);flex:none;transition:transform .4s var(--ease)}
+.to-carta__go svg{width:22px;height:22px}
+@media (hover:hover){.to-carta:hover{transform:translateY(-3px)}.to-carta:hover .to-carta__go{transform:translateX(4px)}}
+.to-carta:active{transform:scale(.98)}
+
+.curtain{position:fixed;inset:0;z-index:200;background:var(--wine);display:grid;place-items:center;clip-path:inset(100% 0 0 0);pointer-events:none}
+.curtain__mark{font-family:var(--serif);font-size:clamp(4rem,14vw,9rem);color:var(--amber);line-height:1}
+.curtain[hidden]{display:none}
+
 @media (prefers-reduced-motion:reduce){
   html:not(.lenis){scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}

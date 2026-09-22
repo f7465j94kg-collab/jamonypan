@@ -5,6 +5,8 @@ import { setupReveal } from './reveal.js';
 import { setupGallery } from './gallery.js';
 import { setupTicker } from './ticker.js';
 import { setupPointer } from './pointer.js';
+import { setupMenu } from './menu.js';
+import { setupTransitions } from './transitions.js';
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
@@ -31,6 +33,8 @@ function configure() {
     disposers.push(setupGallery(gsap, ScrollTrigger, mobile));
     disposers.push(setupReveal(gsap, ScrollTrigger, controller.signal));
     disposers.push(setupTicker(gsap, ScrollTrigger));
+    disposers.push(setupMenu(gsap, ScrollTrigger));
+    disposers.push(setupTransitions(gsap, controller.signal));
     if (finePointer.matches) disposers.push(setupPointer(gsap, controller.signal));
   });
   ScrollTrigger.refresh();

@@ -13,9 +13,7 @@ export function setupScroll(gsap, ScrollTrigger, signal) {
       if (!destination) return;
       event.preventDefault();
       history.pushState(null, '', `#${id}`);
-      const header = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header')) || 64;
       lenis.scrollTo(destination, {
-        offset: id === 'top' ? 0 : -header,
         immediate: link.classList.contains('skip'),
         onComplete: () => {
           const hadTabindex = destination.hasAttribute('tabindex');

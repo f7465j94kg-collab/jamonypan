@@ -57,6 +57,7 @@
   "logo": "https://f7465j94kg-collab.github.io/jamonypan/assets/img/icon-512.png",
   "telephone": "+34 916 44 01 94",
   "priceRange": "10-20 €",
+  "hasMenu": "https://f7465j94kg-collab.github.io/jamonypan/carta/",
   "servesCuisine": ["Española", "Tapas"],
   "address": {
     "@type": "PostalAddress",
@@ -82,6 +83,7 @@
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <div class="progress" aria-hidden="true"></div>
+<div class="curtain" aria-hidden="true" hidden><span class="curtain__mark">&amp;</span></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
@@ -229,7 +231,7 @@
       <div class="sec__head fit">
         <p class="eyebrow" data-sweep>La carta</p>
         <h2 id="carta-t" data-sweep>Lo que más se pide <em>en la barra.</em></h2>
-        <p class="sec__intro" data-rise>Jamón, pan y los clásicos de toda la vida. Pregunta en barra por la carta completa y los precios del día.</p>
+        <p class="sec__intro" data-rise>Jamón, pan y los clásicos de toda la vida. Bocadillos, montados y comida rápida, con precios, en la carta.</p>
       </div>
 
       <div class="menu">
@@ -283,6 +285,10 @@
         </article>
       </div>
 
+      <a class="to-carta" href="carta/" data-transition data-rise>
+        <span class="to-carta__text">Ver la carta con precios<small>Bocadillos y montados desde 2,80 € · hamburguesas · sándwiches · platos combinados</small></span>
+        <span class="to-carta__go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
       <div class="carta__note" data-rise>
         <span><strong>10–20 €</strong> por persona de media</span>
         <span>Para tomar aquí o para llevar</span>
@@ -396,7 +402,7 @@
       </div>
       <div>
         <h2 class="ftr__title">En la web</h2>
-        <ul class="ftr__list"><li><a href="#casa">La casa</a></li><li><a href="#galeria">Fotos</a></li><li><a href="#carta">Carta</a></li><li><a href="#resenas">Reseñas</a></li><li><a href="#visita">Horario y mapa</a></li></ul>
+        <ul class="ftr__list"><li><a href="#casa">La casa</a></li><li><a href="#galeria">Fotos</a></li><li><a href="#carta">Carta</a></li><li><a href="carta/" data-transition>Carta y precios</a></li><li><a href="#resenas">Reseñas</a></li><li><a href="#visita">Horario y mapa</a></li></ul>
       </div>
     </div>
     <div class="ftr__legal">
