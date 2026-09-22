@@ -22,7 +22,7 @@
 
 .menu-sec{position:relative;padding-block:clamp(64px,8vw,120px);scroll-margin-top:60px}
 .menu-sec--paper{background:var(--cream)}
-.menu-sec--paper::before{content:"";position:absolute;inset:0;z-index:0;background-image:var(--grain);opacity:.22;pointer-events:none;mix-blend-mode:multiply}
+.menu-sec--paper::before{content:"";position:absolute;inset:0;z-index:0;background-image:var(--grain);pointer-events:none}
 .menu-sec--dark{background:var(--walnut);color:var(--cream)}
 .menu-sec--deep{background:var(--walnut-2)}
 .menu-sec > .wrap{position:relative;z-index:1}

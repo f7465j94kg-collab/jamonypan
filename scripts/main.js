@@ -66,7 +66,7 @@
     ticking = true;
     requestAnimationFrame(chrome);
   }, { passive: true });
-  chrome();
+  requestAnimationFrame(chrome);
 
   const year = doc.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();

@@ -24,19 +24,13 @@ export function setupMenu(gsap, ScrollTrigger) {
     ScrollTrigger.batch(items, {
       start: 'top 94%',
       once: true,
-      onEnter: (batch) => gsap.to(batch, { opacity: 1, x: 0, duration: 0.6, stagger: 0.045, ease: 'power3.out', overwrite: true })
+      onEnter: (batch) => {
+        gsap.to(batch, { opacity: 1, x: 0, duration: 0.6, stagger: 0.045, ease: 'power3.out', overwrite: true });
+        const prices = batch.flatMap((item) => [...item.querySelectorAll('.price')]);
+        if (prices.length) gsap.from(prices, { scale: 0.6, opacity: 0, duration: 0.5, delay: 0.15, stagger: 0.03, ease: 'back.out(2)' });
+      }
     });
   }
-
-  document.querySelectorAll('.price').forEach((price) => {
-    gsap.from(price, {
-      scale: 0.6,
-      opacity: 0,
-      duration: 0.5,
-      ease: 'back.out(2)',
-      scrollTrigger: { trigger: price, start: 'top 94%', once: true }
-    });
-  });
 
   return () => {};
 }
