@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://f7465j94kg-collab.github.io/jamonypan/sitemap.xml
