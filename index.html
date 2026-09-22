@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jamón &amp; Pan · Cafetería y cervecería en Calle Mayor, Alcorcón</title>
-<meta name="description" content="Jamón &amp; Pan, cafetería y cervecería de barrio en Calle Mayor 101, Alcorcón. Tostas de jamón ibérico, bravas, calamares, bocadillos, café y cañas. Abierto todos los días desde las 6:30. Tel. 916 44 01 94.">
+<meta name="description" content="Cafetería y cervecería de barrio en Calle Mayor 101, Alcorcón. Tostas de jamón ibérico, bravas, calamares, café y cañas. Abierto a diario desde las 6:30.">
 <link rel="canonical" href="https://f7465j94kg-collab.github.io/jamonypan/">
 <meta name="theme-color" content="#2b1b14">
 <meta name="robots" content="index,follow">
@@ -345,7 +345,7 @@ p{margin:0 0 1em}
       <a href="#carta">Carta</a>
       <a href="#resenas">Reseñas</a>
       <a href="#visita">Horario y dirección</a>
-      <a class="btn hdr__call" href="tel:+34916440194" aria-label="Llamar al 916 44 01 94">
+      <a class="btn hdr__call" href="tel:+34916440194" aria-label="916 44 01 94, llamar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
         <span>916 44 01 94</span>
       </a>
@@ -790,9 +790,8 @@ p{margin:0 0 1em}
   var ticking = false, mobile = w.matchMedia('(max-width: 700px)');
   function parallax() {
     ticking = false;
-    onScrollUI();
-    if (reduce.matches) return;
     var vh = w.innerHeight, k = mobile.matches ? 0.6 : 1, writes = [];
+    if (reduce.matches) { onScrollUI(); return; }
     hosts.forEach(function (h) {
       if (!h.visible) return;
       var r = h.el.getBoundingClientRect();
@@ -806,6 +805,7 @@ p{margin:0 0 1em}
         writes.push([l.el, t, op]);
       });
     });
+    onScrollUI();
     writes.forEach(function (x) { x[0].style.transform = x[1]; if (x[2] !== null) x[0].style.opacity = x[2]; });
   }
   function req() { if (!ticking) { ticking = true; requestAnimationFrame(parallax); } }
