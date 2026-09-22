@@ -1,5 +1,6 @@
 export function setupScroll(gsap, ScrollTrigger, signal) {
-  const lenis = window.Lenis ? new window.Lenis({ duration: 1.12, smoothWheel: true, syncTouch: false }) : null;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const lenis = window.Lenis && finePointer ? new window.Lenis({ duration: 1.12, smoothWheel: true, syncTouch: false }) : null;
   const tick = (time) => lenis?.raf(time * 1000);
   if (lenis) {
     lenis.on('scroll', ScrollTrigger.update);
@@ -30,14 +31,16 @@ export function setupScroll(gsap, ScrollTrigger, signal) {
     gsap.fromTo(progress, { scaleX: 0 }, { scaleX: 1, ease: 'none', scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 0.3 } });
   }
 
-  const refresh = () => { lenis?.resize(); ScrollTrigger.refresh(); };
-  document.querySelectorAll('img[loading="lazy"]').forEach((image) => {
-    if (!image.complete) image.addEventListener('load', () => ScrollTrigger.refresh(), { signal, once: true });
-  });
-  window.addEventListener('load', refresh, { signal, once: true });
+  let timer;
+  const refresh = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { if (!signal.aborted) { lenis?.resize(); ScrollTrigger.refresh(); } }, 200);
+  };
+  if (document.readyState !== 'complete') window.addEventListener('load', refresh, { signal, once: true });
   window.addEventListener('pageshow', refresh, { signal });
   document.fonts?.ready.then(() => { if (!signal.aborted) refresh(); });
   return () => {
+    clearTimeout(timer);
     gsap.ticker.remove(tick);
     lenis?.destroy();
   };
