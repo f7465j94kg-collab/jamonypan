@@ -1,0 +1,16 @@
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+
+.motion-enabled .ticker__track{animation:none}
+.motion-enabled .galeria__pin{min-height:100vh;min-height:100svh;padding-block:calc(var(--header) + 12px) 28px}
+.motion-enabled .galeria__track{overflow:visible;scroll-snap-type:none;will-change:transform}
+.motion-enabled .foto{will-change:transform}
+.motion-enabled [data-depth],.motion-enabled .bg-photo img{will-change:transform}
+@media (max-height:740px){.motion-enabled .foto{flex-basis:min(58vw,300px)}}
+
+.motion-enabled .quote,.motion-enabled .dish{backface-visibility:hidden}
+
+@media (prefers-reduced-motion:reduce){
+  .ticker__track{animation:none;flex-wrap:wrap}
+  .ticker__list[aria-hidden]{display:none}
+}
