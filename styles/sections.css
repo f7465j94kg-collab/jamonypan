@@ -73,15 +73,15 @@
 .galeria h2{font-size:min(clamp(2.5rem,5.6vw,4.9rem),var(--display-fit,14cqi))}
 .galeria h2 em{font-style:normal;color:var(--amber)}
 .galeria__hint{display:inline-flex;align-items:center;gap:10px;font-size:.85rem;color:var(--muted-dk);letter-spacing:.04em}
-.galeria__hint svg{width:34px;height:14px;color:var(--amber)}
-.galeria__stage{perspective:1100px;perspective-origin:50% 50%}
-.galeria__track{position:relative;display:flex;gap:clamp(14px,2vw,28px);padding:8px var(--gutter) 24px;margin:0;list-style:none;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;transform-style:preserve-3d}
+.galeria__hint svg{width:34px;height:14px;color:var(--amber);animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(8px)}}
+.galeria__track{position:relative;display:flex;gap:clamp(14px,2vw,28px);padding:8px var(--gutter) 24px;margin:0;list-style:none;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
 .galeria__track::-webkit-scrollbar{display:none}
-.foto{position:relative;flex:0 0 min(76vw,380px);aspect-ratio:3/4;margin:0;border-radius:22px;overflow:hidden;background:var(--walnut-2);scroll-snap-align:center;box-shadow:0 30px 50px -24px rgba(0,0,0,.7);transform-style:preserve-3d}
+.foto{position:relative;flex:0 0 min(76vw,380px);aspect-ratio:3/4;margin:0;border-radius:22px;overflow:hidden;background:var(--walnut-2);scroll-snap-align:center;box-shadow:0 30px 50px -24px rgba(0,0,0,.7)}
 .foto img{width:100%;height:100%;object-fit:cover}
 .foto img[width="650"]{object-position:50% 40%}
 .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(26,17,13,.82));pointer-events:none}
-.foto__cap{position:absolute;left:18px;right:18px;bottom:16px;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.foto__cap{will-change:transform;position:absolute;left:18px;right:18px;bottom:16px;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
 .foto__name{font-family:var(--serif);font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.1}
 .foto__num{font-size:.75rem;letter-spacing:.14em;color:var(--amber);font-weight:600;flex:none}
 .galeria__note{font-size:.82rem;color:var(--muted-dk)}

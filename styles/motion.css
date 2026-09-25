@@ -2,11 +2,13 @@
 .lenis.lenis-stopped{overflow:hidden}
 
 .motion-enabled .ticker__track{animation:none}
-.motion-enabled .galeria__pin{min-height:100vh;min-height:100svh;padding-block:calc(var(--header) + 12px) 28px}
-.motion-enabled .galeria__track{overflow:visible;scroll-snap-type:none;will-change:transform}
+.galeria--pinned .galeria__pin{min-height:100vh;min-height:100svh;padding-block:calc(var(--header) + 12px) 28px}
+.galeria--pinned .galeria__track{overflow:visible;scroll-snap-type:none;will-change:transform}
+.galeria--driven .galeria__track{scroll-snap-type:none}
+.galeria--swipe .galeria__track{padding-block:28px 40px}
 .motion-enabled .foto{will-change:transform}
 .motion-enabled [data-depth],.motion-enabled .bg-photo img{will-change:transform}
-@media (max-height:740px){.motion-enabled .foto{flex-basis:min(58vw,300px)}}
+@media (max-height:740px){.galeria--pinned .foto{flex-basis:min(58vw,300px)}}
 
 .motion-enabled .quote,.motion-enabled .dish{backface-visibility:hidden}
 
